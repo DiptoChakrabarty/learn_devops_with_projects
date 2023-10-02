@@ -12,7 +12,6 @@ def home():
 @app.route("/access",methods=["POST"])
 def access():
     data = request.get_json()
-    print(data)
     name = data.get("name", "dipto")
     server = data.get("server","server1")
 
