@@ -1,6 +1,6 @@
 # DevOps Quick Projects Repository
 
-[Devops Image](./images/devops.png)
+![Devops Image](./images/devops.png)
 
 Welcome to the DevOps Quick Projects Repository! This repository is a collection of small DevOps-related projects, each focusing on different technologies and concepts. Please follow the guidelines below when contributing to this repository.
 
