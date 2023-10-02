@@ -2,7 +2,7 @@
 
 Welcome to the DevOps Quick Projects Repository! This repository is a collection of small DevOps-related projects, each focusing on different technologies and concepts. Please follow the guidelines below when contributing to this repository.
 
-## Guidelines
+## Guidelines 
 
 1. **Be Respectful:** When contributing to this repository, please maintain a respectful and inclusive environment. Respect the opinions and ideas of others, and adhere to our [Code of Conduct](CODE_OF_CONDUCT.md).
 
@@ -12,17 +12,28 @@ Welcome to the DevOps Quick Projects Repository! This repository is a collection
 
 4. **Development Branch:** All pull requests (PRs) should be opened against the `develop` branch. The `main` branch is reserved for stable releases.
 
+5. **Learning:** This repository is for learning devops , if you want to steal some ideas for your resume or have a crazy idea add here. We are very welcoming.
+
+## Issue Creation
+
+1. Please create a issue if you have some cool devops project idea.
+
+2. Discuss with other people and assign yourself if you want to work on it.
+
+3. If issue is left unattended for long time project maintainer will pick it up.
+
 ## Contributing
 
 If you would like to contribute to this repository, follow these steps:
 
 1. Fork this repository to your GitHub account.
 
-2. Clone your forked repository to your local machine.
+2. Clone your forked repository to your local machine. Create a new branch.
 
 ```
 git clone https://github.com/your-username/devops-quick-projects.git
 cd devops-quick-projects
+git checkout -b your_branch_name
 ```
 
 3. Create a directory for the project
