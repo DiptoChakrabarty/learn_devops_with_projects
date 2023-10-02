@@ -1,6 +1,6 @@
-# PROJECT TITLE -> Go_Password_Generator_CLI
+# Go_Password_Generator_CLI
 
-## Contributor Name -> pushkarm029
+## Contributor Name -> @pushkarm029
 
 ## DESCRIPTION OF PROJECT
 ```
