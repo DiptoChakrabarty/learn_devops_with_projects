@@ -1,5 +1,7 @@
 # DevOps Quick Projects Repository
 
+![Devops Image](./images/devops.png)
+
 Welcome to the DevOps Quick Projects Repository! This repository is a collection of small DevOps-related projects, each focusing on different technologies and concepts. Please follow the guidelines below when contributing to this repository.
 
 ## Guidelines 
@@ -26,6 +28,8 @@ Welcome to the DevOps Quick Projects Repository! This repository is a collection
 
 If you would like to contribute to this repository, follow these steps:
 
+Example project is under [sample_project](./sample_project/)
+
 1. Fork this repository to your GitHub account.
 
 2. Clone your forked repository to your local machine. Create a new branch.
@@ -36,7 +40,10 @@ cd devops-quick-projects
 git checkout -b your_branch_name
 ```
 
-3. Create a directory for the project
+3. Create a directory for the project using the bash script given
+```
+sh create_project.sh {your_project_name}
+```
 
 4. Add your files and project under that repository
 
