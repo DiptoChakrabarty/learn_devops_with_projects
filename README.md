@@ -36,7 +36,10 @@ cd devops-quick-projects
 git checkout -b your_branch_name
 ```
 
-3. Create a directory for the project
+3. Create a directory for the project using the bash script given
+```
+sh create_project.sh {your_project_name}
+```
 
 4. Add your files and project under that repository
 
