@@ -1,5 +1,7 @@
 # DevOps Quick Projects Repository
 
+[Devops Image](./images/devops.png)
+
 Welcome to the DevOps Quick Projects Repository! This repository is a collection of small DevOps-related projects, each focusing on different technologies and concepts. Please follow the guidelines below when contributing to this repository.
 
 ## Guidelines 
@@ -25,6 +27,8 @@ Welcome to the DevOps Quick Projects Repository! This repository is a collection
 ## Contributing
 
 If you would like to contribute to this repository, follow these steps:
+
+Example project is under [sample_project](./sample_project/)
 
 1. Fork this repository to your GitHub account.
 
