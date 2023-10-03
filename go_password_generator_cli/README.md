@@ -12,5 +12,3 @@ GO_Password_Generator_CLI is a CLI based password generator written in GoLang us
 
 - go run main.go    // to generate password of length 10
 - go run main.go --l16  // to generate password of length 16
-
-## ScreenShots -> IF NEEDED
