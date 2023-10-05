@@ -1,0 +1,27 @@
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+go.work
+
+.DS_Store
+Thumbs.db
+
+# PostgreSQL data directory
+/data/
+
+# Log files
+*.log
+
+# Configuration files (for local development, these might include secrets)
+/config.json
+
+# Compiled application binaries or artifacts
+/app
+
+# Temporary files or directories
+/tmp/
+.env
