@@ -4,6 +4,8 @@
 
 Welcome to the DevOps Quick Projects Repository! This repository is a collection of small DevOps-related projects, each focusing on different technologies and concepts. Please follow the guidelines below when contributing to this repository.
 
+If you like the project please do :star: it :innocent:
+
 ## Guidelines 
 
 1. **Be Respectful:** When contributing to this repository, please maintain a respectful and inclusive environment. Respect the opinions and ideas of others, and adhere to our [Code of Conduct](CODE_OF_CONDUCT.md).
