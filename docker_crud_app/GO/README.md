@@ -1,39 +1,76 @@
-## **🔥 Introduction**
-This documentation provides an overview of the APIs available for a shopping app. These APIs allow users and sellers to interact with the shopping platform by performing actions such as user registration, login, product management, cart management, and order management etc.
+# Go Backend Application
 
-## **💥 APIs**
+This is a simple Go API implemented using the Gin web framework. It provides basic CRUD (Create, Read, Update, Delete).
 
-```go
-	r.POST("/api/user/login", userauth.Login)
-	r.POST("/api/user/register", userauth.Register)
-	r.POST("/api/seller/login", sellerauth.Login)
-	r.POST("/api/seller/register", sellerauth.Register)
-	r.POST("/api/seller/addproduct", middleware.RequireSellerAuth, sellerhandler.AddProduct)
-	r.GET("/api/seller/getproduct", middleware.RequireSellerAuth, sellerhandler.Get_Product)
-	r.GET("/api/getallproducts", userhandler.Search_Product)
-	r.DELETE("/api/seller/delete", middleware.RequireSellerAuth, sellerhandler.RemoveProduct)
-	r.PUT("/api/seller/update", middleware.RequireSellerAuth, sellerhandler.Update_Product)
-	r.POST("/api/user/addcart", userhandler.Add_Item_In_Cart)
-	r.DELETE("/api/user/removecart", userhandler.Remove_Item_In_Cart)
-	r.GET("/api/user/viewcart", userhandler.View_Item_In_Cart)
-	r.POST("/api/user/placeorder", middleware.RequireUserAuth, userhandler.Place_Order)
-	r.DELETE("/api/user/cancelorder", middleware.RequireUserAuth, userhandler.Cancel_Order)
-	r.GET("/api/user/vieworder", middleware.RequireUserAuth, userhandler.View_Purchased_Items)
-```
-## **🛠️ Local Development** :
+## Table of Contents
 
-1. install all go dependencies
-   ```shell
-   $ go get ./...
+- [Go Backend Application](#go-backend-application)
+  - [Table of Contents](#table-of-contents)
+  - [Prerequisites](#prerequisites)
+  - [Getting Started](#getting-started)
+  - [API Endpoints](#api-endpoints)
+
+## Prerequisites
+
+Before you begin, ensure you have the following dependencies installed:
+
+- [Go](https://golang.org/doc/install)
+- [Docker](https://docs.docker.com/get-docker/)
+
+## Getting Started
+
+1. Clone this repository to your local machine:
+
+   ```bash
+   git clone https://github.com/DiptoChakrabarty/learn_devops_with_projects
    ```
-2. Start Database on :5432
-   ```shell
+
+2. Change into the project directory:
+
+   ```bash
+   cd learn_devops_with_projects/docker_crud_app/go
+   ```
+
+3. Build and run the Go API:
+
+   ```bash
    docker compose up
    ```
-3. Start the server on :8080
-    ```shell
-    go run main.go
+
+   This will start the API server on port 8080 by default.
+
+## API Endpoints
+
+The API provides the following endpoints:
+
+- **GET /get**: Get the list of storage items.
+
+- **POST /post**: Create a new storage item.
+  - Request body should be in JSON format with a "text" field.
+  - Example:
+    ```json
+    {
+      "text": "New storage item"
+    }
     ```
 
+- **PUT /put**: Update an existing storage item.
+  - Request body should be in JSON format with an "id" (the ID of the item to update) and a "text" field.
+  - Example:
+    ```json
+    {
+      "id": 1,
+      "text": "Updated text"
+    }
+    ```
 
-**Note : You need to restart backend server after every change in any .go file.**
+- **DELETE /delete**: Delete a storage item.
+  - Request body should be in JSON format with an "id" (the ID of the item to delete).
+  - Example:
+    ```json
+    {
+      "id": 1
+    }
+    ```
+
+Now you can access the API at [http://localhost:8080](http://localhost:8080).

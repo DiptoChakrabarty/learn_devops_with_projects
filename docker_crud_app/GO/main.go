@@ -1,39 +1,82 @@
 package main
 
 import (
-	"amazon-backend/config"
-	sellerauth "amazon-backend/handlers/authentication/seller_auth"
-	userauth "amazon-backend/handlers/authentication/user_auth"
-	sellerhandler "amazon-backend/handlers/seller_handler"
-	userhandler "amazon-backend/handlers/user_handler"
-	"amazon-backend/middleware"
+	"net/http"
+	"time"
 
-	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
-	config.Connect()
-	router := gin.Default()
-	router.Use(cors.Default())
-	initRoutes(router)
-	router.Run(":8080")
+	r := gin.Default()
+	initRoutes(r)
+	r.Run(":8080")
+}
+
+type Storage struct {
+	ID   int        `json:"id"`
+	Time *time.Time `json:"time"`
+	Text string     `json:"text"`
+}
+
+type POSTInput struct {
+	Text string `json:"text"`
+}
+
+type DELETEdata struct {
+	ID int `json:"id"`
+}
+
+type PUTdata struct {
+	ID   int    `json:"id"`
+	Text string `json:"text"`
 }
 
 func initRoutes(r *gin.Engine) {
-	r.POST("/api/user/login", userauth.Login)
-	r.POST("/api/user/register", userauth.Register)
-	r.POST("/api/seller/login", sellerauth.Login)
-	r.POST("/api/seller/register", sellerauth.Register)
-	r.POST("/api/seller/addproduct", middleware.RequireSellerAuth, sellerhandler.AddProduct)
-	r.GET("/api/seller/getproduct", middleware.RequireSellerAuth, sellerhandler.Get_Product)
-	r.GET("/api/getallproducts", userhandler.Search_Product)
-	r.DELETE("/api/seller/delete", middleware.RequireSellerAuth, sellerhandler.RemoveProduct)
-	r.PUT("/api/seller/update", middleware.RequireSellerAuth, sellerhandler.Update_Product)
-	r.POST("/api/user/addcart", userhandler.Add_Item_In_Cart)
-	r.DELETE("/api/user/removecart", userhandler.Remove_Item_In_Cart)
-	r.GET("/api/user/viewcart", userhandler.View_Item_In_Cart)
-	r.POST("/api/user/placeorder", middleware.RequireUserAuth, userhandler.Place_Order)
-	r.DELETE("/api/user/cancelorder", middleware.RequireUserAuth, userhandler.Cancel_Order)
-	r.GET("/api/user/vieworder", middleware.RequireUserAuth, userhandler.View_Purchased_Items)
+	var store []Storage
+	ID := 0
+	r.GET("/get", func(c *gin.Context) {
+		c.JSON(http.StatusOK, store)
+	})
+	r.POST("/post", func(c *gin.Context) {
+		var data POSTInput
+		if err := c.ShouldBindJSON(&data); err != nil {
+			c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid request payload in POST"})
+			return
+		}
+		ID++
+		currentTime := time.Now()
+		dataPacket := Storage{ID, &currentTime, data.Text}
+
+		store = append(store, dataPacket)
+		c.JSON(http.StatusOK, gin.H{"status": "added"})
+	})
+	r.PUT("/put", func(c *gin.Context) {
+		var data PUTdata
+		if err := c.ShouldBindJSON(&data); err != nil {
+			c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid request payload in PUT"})
+			return
+		}
+		for i := 0; i < len(store); i++ {
+			if store[i].ID == data.ID {
+				store[i].Text = data.Text
+				break
+			}
+		}
+		c.JSON(http.StatusOK, gin.H{"status": "updated"})
+	})
+	r.DELETE("/delete", func(c *gin.Context) {
+		var data DELETEdata
+		if err := c.ShouldBindJSON(&data); err != nil {
+			c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid request payload in DELETE"})
+			return
+		}
+		for i := 0; i < len(store); i++ {
+			if store[i].ID == data.ID {
+				store = append(store[:i], store[i+1:]...)
+				break
+			}
+		}
+		c.JSON(http.StatusOK, gin.H{"status": "deleted"})
+	})
 }
