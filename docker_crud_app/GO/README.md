@@ -9,6 +9,7 @@ This is a simple Go API implemented using the Gin web framework. It provides bas
   - [Prerequisites](#prerequisites)
   - [Getting Started](#getting-started)
   - [API Endpoints](#api-endpoints)
+  - [Contributor @pushkarm029](#contributor-pushkarm029)
 
 ## Prerequisites
 
@@ -74,3 +75,5 @@ The API provides the following endpoints:
     ```
 
 Now you can access the API at [http://localhost:8080](http://localhost:8080).
+
+## Contributor @pushkarm029
