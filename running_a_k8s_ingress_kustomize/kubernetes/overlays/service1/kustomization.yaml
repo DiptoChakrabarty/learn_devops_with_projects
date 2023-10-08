@@ -1,0 +1,16 @@
+resources:
+  - ../../base
+
+patches:
+  - path: patch-deployment.yaml
+    target:
+      kind: Deployment
+      name: nginx-deployment
+  - path: patch-service.yaml
+    target:
+      kind: Service
+      name: nginx-service
+  - path: patch-content.yaml
+    target:
+      kind: ConfigMap
+      name: nginx-content

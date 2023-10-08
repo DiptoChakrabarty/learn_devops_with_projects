@@ -1,0 +1,9 @@
+- op: replace
+  path: /metadata/name
+  value: service1-content
+- op: replace
+  path: /metadata/labels/app
+  value: service1-content
+- op: replace
+  path: /data/index.html
+  value: '{"Message" : "This is service 1"}'
