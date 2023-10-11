@@ -1,0 +1,15 @@
+- op: replace
+  path: /metadata/name
+  value: service2-deployment
+- op: replace
+  path: /metadata/labels/app
+  value: service2
+- op: replace
+  path: /spec/selector/matchLabels/app
+  value: service2
+- op: replace
+  path: /spec/template/metadata/labels/app
+  value: service2
+- op: replace
+  path: /spec/template/spec/volumes/0/configMap/name
+  value: service2-content

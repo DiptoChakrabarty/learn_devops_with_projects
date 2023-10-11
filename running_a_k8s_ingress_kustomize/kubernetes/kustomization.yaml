@@ -1,0 +1,6 @@
+resources:
+  - ./overlays/service1
+  - ./overlays/service2
+  - ./overlays/ingress
+
+namespace: kube-ingress
