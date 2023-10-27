@@ -1,6 +1,6 @@
-# python script to delete s3 data
+#  applying lifecycle policy s3
 
-this project holds a python script which can delete S3 data which is older than 30 days
+this project holds a python script which applies a predefined lifecycle policy for a given s3 bucket
 
 ## by [@selamanse](https://github.com/selamanse)
 
