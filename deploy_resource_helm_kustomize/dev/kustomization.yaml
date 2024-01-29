@@ -1,0 +1,18 @@
+## apps/my-first/base/kustomization.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+helmGlobals:
+  chartHome: ../
+helmCharts:
+- releaseName: ziggy
+  namespace: default
+  name: ziggy
+  version: 0.1.0
+  includeCRDs: false
+  valuesFile: ../ziggy/values.yaml
+
+patches:
+  - path: labels-dev.yaml
+    target:
+      kind: Deployment
