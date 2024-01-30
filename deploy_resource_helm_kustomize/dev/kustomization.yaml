@@ -13,6 +13,9 @@ helmCharts:
   valuesFile: ../ziggy/values.yaml
 
 patches:
-  - path: labels-dev.yaml
+  - path: ./labels-dev.yaml
     target:
       kind: Deployment
+
+resources:
+  - "../ziggy/templates"
