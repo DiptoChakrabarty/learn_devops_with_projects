@@ -1,0 +1,8 @@
+resources:
+  - "../../manifest/"
+
+patches:
+  - path: ./labels-dev.yaml
+    target:
+      kind: Deployment
+      name: release-name-ziggy
