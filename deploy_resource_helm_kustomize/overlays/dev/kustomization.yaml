@@ -2,7 +2,12 @@ resources:
   - "../../manifest/"
 
 patches:
-  - path: ./labels-dev.yaml
+  - path: ./patch-deploy.yaml
     target:
       kind: Deployment
-      name: release-name-ziggy
+  - path: ./patch-service.yaml
+    target:
+      kind: Service
+  - path: ./patch-pod.yaml
+    target:
+      kind: Pod
