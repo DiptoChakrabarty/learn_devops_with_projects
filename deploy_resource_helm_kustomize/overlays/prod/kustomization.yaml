@@ -1,0 +1,13 @@
+resources:
+  - "../../manifest/"
+
+patches:
+  - path: ./patch-deploy.yaml
+    target:
+      kind: Deployment
+  - path: ./patch-service.yaml
+    target:
+      kind: Service
+  - path: ./patch-pod.yaml
+    target:
+      kind: Pod
