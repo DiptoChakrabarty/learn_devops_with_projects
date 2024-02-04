@@ -9,10 +9,8 @@ Add some description here
 
 ## Steps to run
 
-- Step 1
+- helm template ziggy ziggy > manifest/backend.yaml
 
-- Step 2
-
-- Step 3
+- kustomize build overlays/dev > result/dev-result.yaml
 
 ## ScreenShots -> IF NEEDED
