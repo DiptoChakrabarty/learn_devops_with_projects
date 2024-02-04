@@ -1,3 +1,12 @@
 - op: replace
   path: /metadata/name
   value: prod-ziggy-deployment
+- op: add
+  path: /spec/template/spec/containers/0/resources
+  value:
+    limits:
+      cpu: "3.0"
+      memory: "2Gi"
+    requests:
+      cpu: "1.0"
+      memory: "1Gi"
