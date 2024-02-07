@@ -1,10 +1,10 @@
-# PROJECT TITLE -> REPLACE THIS
+# Deploy resources with helm and kustomize
 
-## Contributor Name -> Add github handle here
+## Contributor Name -> @DiptoChakrabarty
 
 ## DESCRIPTION OF PROJECT
 ```
-Add some description here
+This project demonstrates how to develop a helm chart and integrate it with kustomize.
 ```
 
 ## Steps to run
@@ -13,4 +13,7 @@ Add some description here
 
 - kustomize build overlays/dev > result/dev-result.yaml
 
-## ScreenShots -> IF NEEDED
+## Blogs
+
+- [An intro to Helm and how you can use it for packaging cloud native applications Medium](https://diptochakrabarty.medium.com/an-intro-to-helm-and-how-you-can-use-it-for-packaging-cloud-native-applications-c51081204fda)
+- [An intro to Helm and how you can use it for packaging cloud native applications HashNode](https://dipchak.hashnode.dev/an-intro-to-helm-and-how-you-can-use-it-for-packaging-cloud-native-applications)
