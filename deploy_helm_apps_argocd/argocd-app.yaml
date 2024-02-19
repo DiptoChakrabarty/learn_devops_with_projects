@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: webserver-app
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/DiptoChakrabarty/learn_devops_with_projects
+    targetRevision: helm_Argo
+    path: deploy_helm_apps_argocd/webserver
+  destination:
+    namespace: webserver
+    server: "https://kubernetes.default.svc"
+  syncPolicy:
+    automated: {}
+  helm:
+    releaseName: webserver
+    valueFiles:
+    - values.yaml
