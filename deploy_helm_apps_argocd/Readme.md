@@ -1,6 +1,6 @@
-# PROJECT TITLE -> REPLACE THIS
+# GitOps using Helm and ArgoCD
 
-## Contributor Name -> Add github handle here
+## Contributor Name -> DiptoChakrabarty
 
 ## DESCRIPTION OF PROJECT
 ```
